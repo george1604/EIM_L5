@@ -19,6 +19,8 @@ public class StartedService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d(Constants.TAG, "onStartCommand() method was invoked");
         // TODO: exercise 5 - implement and start the ProcessingThread
+        Thread t = new ProcessingThread(this.getApplicationContext());
+        t.start();
         return START_REDELIVER_INTENT;
     }
 
